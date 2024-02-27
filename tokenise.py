@@ -1,6 +1,7 @@
 import pandas as pd
 import re
 from itertools import chain
+import nltk
 
 def tokenize(raw_data):
 
@@ -13,8 +14,10 @@ def tokenize(raw_data):
     allWords = []
 
     for cell in df['content']:
-        words = cell.split()
-        allWords.append(list(words))
+        # words = cell.split()
+        # allWords.append(list(words))
+        tokens = nltk.word_tokenize(cell)
+        allWords.append(tokens)
     
     # Create flat list from list of lists
     flat_list_raw = [word for inner_list in allWords for word in inner_list]
