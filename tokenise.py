@@ -2,6 +2,7 @@ import pandas as pd
 import re
 from itertools import chain
 import nltk
+from nltk import regexp_tokenize
 
 def tokenize(raw_data):
 
@@ -17,6 +18,7 @@ def tokenize(raw_data):
         # words = cell.split()
         # allWords.append(list(words))
         tokens = nltk.word_tokenize(cell)
+        tokensREGEX = regexp_tokenize(cell, pattern=r"\s|[.,;']", gaps=True)
         allWords.append(tokens)
     
     # Create flat list from list of lists
