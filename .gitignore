@@ -1,6 +1,12 @@
 # Ignore directory and contents for big data files
 /data/
 
+# exclude everything
+FakeNewsPredictor/files/*
+# exception to the rule
+!FakeNewsPredictor/files/.gitkeep
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
